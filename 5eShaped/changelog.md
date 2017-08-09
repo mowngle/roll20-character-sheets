@@ -11,6 +11,86 @@ Bugs fall into the patch category.
 
 The sheet will always upgrade itself unless I specify otherwise, though some things like roll template fields changing will require users who have added custom macros to fix.
 
+## 15.4.0
+
+### Features
+
+* Cleaned up the styling around the heart as users were often confused what it meant:
+
+![alt text](http://i.imgur.com/0f8z8k1.jpg "Heart")
+
+### Bug Fixes
+
+* [#566: Automatically roll damage should still show the "Hit" and "Saving throw failure" buttons](https://bitbucket.org/mlenser/5eshaped/issues/566/automatically-roll-damage-should-still)
+
+## 15.3.0
+
+### Features
+
+* All repeating section rolling buttons should now use `roll` instead of words like `action`. For example: `%{repeating_action_ID_action}` is now `%{repeating_action_ID_roll}`. All old names will still work, but all documentaton will be updated to these new names so it is easier for users to understand.
+
+## 15.2.0
+
+### Features
+
+* Added some fields to the roll template to better support `!shaped-spells` and `!shaped-monsters` so that it sends less data.
+
+## 15.1.1
+
+### Bug Fixes
+
+* [#550: Modifier dice damage bugs critical damage](https://bitbucket.org/mlenser/5eshaped/issues/550/modifier-dice-damage-bugs-critical-damage)
+* [#549: Offense attacher displays on utility items](https://bitbucket.org/mlenser/5eshaped/issues/549/offense-attacher-displays-on-utility-items)
+* [#558: Stealth Disadvantage on Armour doesn't go away when not equipped](https://bitbucket.org/mlenser/5eshaped/issues/558/stealth-disadvantage-on-armour-doesnt-go)
+* [#555: Uses parsing of equipment has some bugs](https://bitbucket.org/mlenser/5eshaped/issues/555/uses-parsing-of-equipment-has-some-bugs)
+* Updated documentation link to the new wiki and added a link on the version (goes to changelog)
+
+## 15.1.0
+
+### Features
+
+* Alternate dice system of 2d10 and 3d6 can be used in place of a d20 now
+* Saving throws can now have either 3 or 5 chances
+* Added styling necessary for the script's new `!shaped` command
+
+## 15.0.2
+
+### Bug Fixes
+
+* [#539: "extra on crit" doesn't work on secondary damage](https://bitbucket.org/mlenser/5eshaped/issues/539/extra-on-crit-doesnt-work-on-secondary)
+* [#541: Spell uses are not recharged on a rest](https://bitbucket.org/mlenser/5eshaped/issues/541/spell-uses-are-not-recharged-on-a-rest)
+* [#540: Inventory quantities do not convert when upgrading from 11.3.3 to 15.0.1](https://bitbucket.org/mlenser/5eshaped/issues/540/inventory-quantities-do-not-convert-when) fixed as part of the 14.0.0 upgrade
+
+## 15.0.1
+
+### Bug Fixes
+
+* [#519: Ammo added to multiple items when trying to add it to 1 item](https://bitbucket.org/mlenser/5eshaped/issues/519/ammo-added-to-multiple-items-when-trying)
+
+## 15.0.0
+
+### Breaking Changes
+
+* `MELEE_OR_RANGED_WEAPON_ATTACK`s will now be treated as either melee or ranged and the parses will split them out to different weapons as I do for versatile. This is to ensure that the right damage bonuses are being used and ammo is being used properly. All existing items will remain working, but it'll parse all new items. Closes [#533: savage attacks half-orc](https://bitbucket.org/mlenser/5eshaped/issues/533/savage-attacks-half-orc)
+
+### Bug Fixes
+
+* Fixed Versatile parsing.
+* [#524: Modifiers not reading attribute macros 14.2.4](https://bitbucket.org/mlenser/5eshaped/issues/524/modifiers-not-reading-attribute-macros)
+* [#526: On the equipment tab the carrying capacity / weight area is justified oddly](https://bitbucket.org/mlenser/5eshaped/issues/526/on-the-equipment-tab-the-carrying-capacity)
+* [#520: Empty utility/offence macro shows last deleted entry](https://bitbucket.org/mlenser/5eshaped/issues/520/empty-utility-offence-macro-shows-last)
+* [#531: Formatting of spell title line gets distorted with recharge](https://bitbucket.org/mlenser/5eshaped/issues/531/formatting-of-spell-title-line-gets)
+
+## 14.3.0
+
+### Features
+
+* Added setting to recover hit dice on a short rest. It includes all, half, fourth, and none. Fourth is there to work with the DMG healing surge rule that allows 1/4th of hit dice to be recovered on a short rest.
+
+### Bug Fixes
+
+* All sections that use freeform have changed the way that they do in order to always ensure that freeform comes last even when there are asynchronous calls like finding ammo. Closes [#515: fx with target no longer works](https://bitbucket.org/mlenser/5eshaped/issues/515/fx-with-target-no-longer-works)
+
 ## 14.2.4
 
 ### Bug Fixes
