@@ -6933,6 +6933,17 @@ var handleSpecialClassFeatures = function handleSpecialClassFeatures(data, class
 		content: getTranslationByKey('CLASS_FEATURE_HABERDASHER_SMOKE_BOMB_TEXT').replace('HABERDASHER_SMOKE_COUNT', smokeBombUses)		
       };
 	}
+  } else if (className === 'SWORD_SAINT') {
+    if (feature === 'PLANAR_DICE') {
+	  var planarDice = Math.max((0, _abilities.getAbilityMod)(data, 'intelligence'), 1);
+	  if (data.sword_saint_level >= 11) {
+	    planarDice += 2;
+	  }
+      obj = {
+        recharge: 'SHORT_OR_LONG_REST',
+        uses_max: planarDice	
+      };
+	}
   } else if (className === 'MONK') {
     if (feature === 'UNARMORED_DEFENSE') {
       var _repString = 'repeating_armor_' + generateRowID();
